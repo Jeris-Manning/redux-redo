@@ -13,7 +13,7 @@ export class Search extends Component {
     setAlert: PropTypes.func.isRequired
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     if (this.state.text === '') {
       this.props.setAlert('Please enter something', 'light');
@@ -23,12 +23,13 @@ export class Search extends Component {
     }
   };
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     const { showClear, clearUsers } = this.props;
 
     return (
+      
       <div>
         <form onSubmit={this.onSubmit} className='form'>
           <input
